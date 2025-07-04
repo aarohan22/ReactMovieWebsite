@@ -1,0 +1,88 @@
+.actor-detail-container {
+  padding: 3rem 2rem;
+  color: #f0f0f0;
+  background: linear-gradient(145deg, #0e0e0e, #1c1c1c);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.actor-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.actor-card img {
+  width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(255, 0, 120, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.actor-card img:hover {
+  transform: scale(1.05);
+}
+
+.actor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actor-info h1 {
+  font-size: 2.4rem;
+  color: #ff4081;
+  margin: 0;
+}
+
+.actor-info p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.known-for-section {
+  margin-top: 2rem;
+}
+
+.known-for-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  border-bottom: 2px solid #ff4081;
+  padding-bottom: 0.3rem;
+  display: inline-block;
+}
+
+.known-for-list {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.known-for-card {
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.known-for-card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 20px rgba(255, 64, 129, 0.25);
+}
+
+.known-for-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.known-for-card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}

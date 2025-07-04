@@ -1,0 +1,210 @@
+.episodes-container {
+  padding: 2rem;
+  background: linear-gradient(to bottom, #121212, #1e1e1e);
+  color: #f1f1f1;
+  min-height: 100vh;
+}
+
+.episodes-title {
+  font-size: 2.7rem;
+  color: #ff4081;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.season-panel {
+  background-color: #2b2b2b;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.season-header {
+  padding: 1rem 1.5rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.season-header:hover {
+  background-color: #444;
+}
+
+
+.episode-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #1a1a1a;
+}
+
+.episode-card {
+  background-color: #282828;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.episode-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.episode-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 2px solid #1f1f1f;
+}
+
+.episode-info {
+  padding: 0.75rem;
+  flex-grow: 1;
+}
+
+.episode-info h4 {
+  font-size: 1rem;
+  color: #ff8a65;
+  margin: 0.2rem 0;
+}
+
+.episode-info p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0;
+}
+
+
+.modal-overlay-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: rgba(31, 31, 31, 0.95);
+  padding: 2rem;
+  max-width: 800px;
+  width: 90%;
+  border-radius: 12px;
+  position: relative;
+  color: #f1f1f1;
+  overflow-y: auto;
+  max-height: 90vh;
+  box-shadow: 0 0 25px rgba(255, 64, 129, 0.15);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.4rem;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.modal-close:hover {
+  color: #ff4081;
+}
+
+.modal-episode-title {
+  color: #ff4081;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.modal-episode-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  background-color: #000;
+  border: 1px solid #333;
+}
+
+.modal-episode-meta {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.modal-episode-meta p {
+  margin: 0.25rem 0;
+}
+
+.modal-overview {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+
+.modal-nav-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-nav-buttons button {
+  padding: 0.5rem 1.2rem;
+  background-color: #ff4081;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-nav-buttons button:hover {
+  background-color: #ff1f6b;
+}
+
+.modal-nav-buttons button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
