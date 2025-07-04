@@ -104,3 +104,49 @@
   height: 20px;
   width: 20px;
 }
+
+
+@media (max-width: 768px) {
+  .auth-form {
+    margin: 3rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-form h2 {
+    font-size: 1.6rem;
+  }
+
+  .auth-form input,
+  .auth-form button,
+  .google-login-button {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .auth-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .auth-form input,
+  .auth-form button,
+  .google-login-button {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .google-login-button img {
+    height: 18px;
+    width: 18px;
+  }
+
+  .auth-form p {
+    font-size: 0.9rem;
+  }
+}

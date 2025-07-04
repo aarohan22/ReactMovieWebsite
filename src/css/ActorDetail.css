@@ -65,7 +65,6 @@
   display: inline-block;
 }
 
-/* Horizontal scroll for known-for list */
 .known-for-list {
   display: flex;
   overflow-x: auto;
@@ -160,7 +159,21 @@
   text-align: center;
 }
 
-/* Media Queries */
+
+@media (max-width: 1024px) {
+  .actor-info h1 {
+    font-size: 2.1rem;
+  }
+
+  .known-for-card {
+    width: 150px;
+  }
+
+  .known-for-card img {
+    height: 215px;
+  }
+}
+
 @media (max-width: 768px) {
   .actor-card {
     flex-direction: column;
@@ -173,7 +186,11 @@
   }
 
   .actor-info h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+  }
+
+  .actor-info p {
+    font-size: 0.95rem;
   }
 
   .known-for-card {
@@ -183,11 +200,23 @@
   .known-for-card img {
     height: 200px;
   }
+
+  .known-for-title {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
   .actor-detail-container {
     padding: 2rem 1rem;
+  }
+
+  .actor-info h1 {
+    font-size: 1.7rem;
+  }
+
+  .actor-info p {
+    font-size: 0.9rem;
   }
 
   .known-for-card {
@@ -196,5 +225,9 @@
 
   .known-for-card img {
     height: 190px;
+  }
+
+  .known-for-title {
+    font-size: 0.85rem;
   }
 }

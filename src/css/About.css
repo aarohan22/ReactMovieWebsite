@@ -55,6 +55,7 @@
   font-size: 2rem;
   color: #ff0080;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .avatar-img {
@@ -88,13 +89,57 @@
   margin: 1rem 0;
 }
 
+
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-avatar h2 {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-section {
     padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .about-avatar {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-avatar h2 {
+    font-size: 1.5rem;
   }
 
   .avatar-img {
     width: 200px;
     height: 200px;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 1rem;
+  }
+
+  .about-avatar h2 {
+    font-size: 1.25rem;
+  }
+
+  .avatar-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }

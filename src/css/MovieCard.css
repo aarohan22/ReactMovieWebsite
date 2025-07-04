@@ -107,8 +107,9 @@
   gap: 0.4rem;
 }
 
-/* Favorite Button */
-.favorite-btn {
+/* Favorite & Watchlist Button */
+.favorite-btn,
+.watchlist-btn {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 1.4rem;
@@ -131,47 +132,48 @@
   transform: scale(1.1);
 }
 
-.favorite-btn.active {
-  color: #ff4081;
-}
-
-
-.watchlist-btn {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 1.4rem;
-  border-radius: 50%;
-  padding: 0.5rem;
-  width: 36px;
-  height: 36px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  cursor: pointer;
-  z-index: 4;
-}
-
 .watchlist-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: #00e0ff;
   transform: scale(1.3);
-  
+}
+
+.favorite-btn.active {
+  color: #ff4081;
 }
 
 .watchlist-btn.active {
   color: #00e0ff;
 }
 
-
+/* === Responsive Adjustments === */
 @media (max-width: 768px) {
   .movie-card {
-    font-size: 0.9rem;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .movie-card:hover .movie-info,
+  .movie-card:hover .movie-blur-bg,
+  .movie-card:hover .movie-poster img {
+    transform: none !important;
+    opacity: 1 !important;
   }
 
   .movie-info {
+    opacity: 1;
+    transform: translateY(0);
+    position: static;
     padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .movie-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .movie-info p {
+    font-size: 0.9rem;
   }
 
   .favorite-btn,
@@ -179,5 +181,26 @@
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-info {
+    padding: 0.6rem;
+  }
+
+  .movie-info h3 {
+    font-size: 1rem;
+  }
+
+  .movie-info p {
+    font-size: 0.85rem;
+  }
+
+  .favorite-btn,
+  .watchlist-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
   }
 }

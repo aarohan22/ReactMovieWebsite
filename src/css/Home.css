@@ -31,3 +31,48 @@
   margin-top: 5rem;
   color: #fff;
 }
+
+/* ===== ✅ Responsive Enhancements ===== */
+@media (max-width: 768px) {
+  .home {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    padding-left: 0.8rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .loading,
+  .error-message {
+    font-size: 1.3rem;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    padding-left: 0.6rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+
+  .loading,
+  .error-message {
+    font-size: 1.1rem;
+    margin-top: 3rem;
+  }
+}

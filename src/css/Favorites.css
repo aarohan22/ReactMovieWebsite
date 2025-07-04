@@ -15,14 +15,14 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Auth Message */
+
 .auth-message {
   text-align: center;
   font-size: 1.2rem;
   color: #bbb;
 }
 
-/* Tab Buttons */
+
 .tab-buttons {
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@
   box-shadow: 0 0 10px rgba(244, 6, 18, 0.4);
 }
 
-/* Card Grid */
+
 .favorites-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -73,7 +73,7 @@
   position: relative;
 }
 
-/* Empty state */
+
 .favorites-empty {
   text-align: center;
   padding: 4rem 2rem;
@@ -108,8 +108,12 @@
   }
 }
 
-/* Responsive tweaks */
+
 @media (max-width: 768px) {
+  .favorites-page {
+    padding: 2.5rem 1rem;
+  }
+
   .favorites-page h2 {
     font-size: 2.2rem;
   }
@@ -119,7 +123,45 @@
     font-size: 0.95rem;
   }
 
+  .favorites-empty {
+    padding: 3rem 1rem;
+  }
+
   .favorites-empty p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites-page {
+    padding: 2rem 1rem;
+  }
+
+  .favorites-page h2 {
+    font-size: 1.9rem;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .tab-buttons button {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.6rem;
+  }
+
+  .favorites-empty p {
+    font-size: 0.95rem;
+  }
+
+  .favorites-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
   }
 }
