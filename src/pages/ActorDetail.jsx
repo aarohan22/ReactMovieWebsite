@@ -2,33 +2,40 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../css/ActorDetail.css";
 
+const API_KEY = "55d4f543b9f3aa97797dda4acce64f2b";
+
 function ActorDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [actor, setActor] = useState(null);
-  const [knownFor, setKnownFor] = useState([]);
+  const [allCredits, setAllCredits] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const API_KEY = "55d4f543b9f3aa97797dda4acce64f2b";
 
   useEffect(() => {
     const fetchActorDetails = async () => {
       try {
-        const [personRes, creditsRes] = await Promise.all([
+        const [personRes, movieCreditsRes, tvCreditsRes] = await Promise.all([
           fetch(`https://api.themoviedb.org/3/person/${id}?api_key=${API_KEY}`),
           fetch(`https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${API_KEY}`),
+          fetch(`https://api.themoviedb.org/3/person/${id}/tv_credits?api_key=${API_KEY}`),
         ]);
 
         const personData = await personRes.json();
-        const creditsData = await creditsRes.json();
+        const movieCredits = await movieCreditsRes.json();
+        const tvCredits = await tvCreditsRes.json();
+
+        const allAppearances = [
+          ...movieCredits.cast.map((item) => ({ ...item, media_type: "movie" })),
+          ...tvCredits.cast.map((item) => ({ ...item, media_type: "tv" })),
+        ];
+
+        const sorted = allAppearances
+          .filter((item) => item.popularity)
+          .sort((a, b) => b.popularity - a.popularity);
 
         setActor(personData);
-        setKnownFor(
-          creditsData.cast
-            .sort((a, b) => b.popularity - a.popularity)
-            .slice(0, 5)
-        );
+        setAllCredits(sorted);
         setError(null);
       } catch (err) {
         console.error(err);
@@ -68,29 +75,34 @@ function ActorDetail() {
         </div>
       </div>
 
-      {knownFor.length > 0 && (
+      {allCredits.length > 0 && (
         <div className="known-for-section">
-          <h2>Top Movies</h2>
+          <h2>All Appearances</h2>
           <div className="known-for-list">
-            {knownFor.map((movie) => (
-              <div
-                className="known-for-card"
-                key={movie.id}
-                title={movie.title}
-                onClick={() => navigate(`/movie/${movie.id}`)}
-                style={{ cursor: "pointer" }}
-              >
-                <img
-                  src={
-                    movie.poster_path
-                      ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`
-                      : "https://via.placeholder.com/185x278?text=No+Image"
-                  }
-                  alt={movie.title}
-                />
-                <p>{movie.title}</p>
-              </div>
-            ))}
+            {allCredits.map((item) => {
+              const title = item.title || item.name;
+              const releaseYear = (item.release_date || item.first_air_date || "").slice(0, 4);
+              const image = item.poster_path
+                ? `https://image.tmdb.org/t/p/w185${item.poster_path}`
+                : "https://via.placeholder.com/185x278?text=No+Image";
+              return (
+                <div
+                  className="known-for-card"
+                  key={`${item.media_type}-${item.id}`}
+                  onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                >
+                  <img src={image} alt={title} />
+                  <p className="known-for-title">{title}</p>
+                  <div className={`media-badge ${item.media_type}`}>
+                    {item.media_type === "movie" ? "Movie" : "TV Show"}
+                  </div>
+                  <p className="release-year">{releaseYear || "N/A"}</p>
+                  {item.character && (
+                    <p className="character-name">as {item.character}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
