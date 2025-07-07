@@ -1,8 +1,8 @@
-// src/pages/TrendingMoviesPage.jsx
+
 import { useEffect, useState } from "react";
 import { useMovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/MovieCard"; 
-import HeroBanner from "../components/HeroBanner"; // Import HeroBanner
+import HeroBanner from "../components/HeroBanner"; 
 import "../css/Home.css"; 
 
 const API_KEY = "55d4f543b9f3aa97797dda4acce64f2b";
@@ -19,7 +19,7 @@ function TrendingMoviesPage() {
 
   return (
     <div className="search-page">
-      {/* HeroBanner added */}
+      
       <HeroBanner type="movie" />
       
       <h2>🔥 Trending Movies</h2>

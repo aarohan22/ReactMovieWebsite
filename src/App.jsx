@@ -1,12 +1,12 @@
 import "./css/App.css";
 import { Routes, Route } from 'react-router-dom';
 
-// Layout
+
 import NavBar from './components/NavBar.jsx';
 import { MovieProvider } from "./contexts/MovieContext.jsx";
-import { TvProvider } from "./contexts/TvContext.jsx"; // ✅ Import TV Context
+import { TvProvider } from "./contexts/TvContext.jsx"; 
 
-// Pages
+
 import Home from './pages/Home.jsx';
 import Favorites from './pages/Favourites.jsx';
 import About from './pages/About.jsx';

@@ -31,7 +31,7 @@
   transition: all 0.3s ease;
 }
 
-/* 🔽 Tabs */
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +71,7 @@
   text-align: left;
 }
 
-/* 🔽 Watchlist */
+
 .watchlist-section {
   margin-bottom: 2.5rem;
 }
@@ -100,7 +100,7 @@
   box-shadow: 0 0 12px rgba(255, 71, 71, 0.5);
 }
 
-/* 🔽 Genre Tags */
+
 .genre-tags {
   display: flex;
   flex-wrap: wrap;
@@ -132,7 +132,7 @@
   box-shadow: 0 0 8px rgba(255, 71, 71, 0.6);
 }
 
-/* 🔽 Input */
+
 .profile-input {
   width: 100%;
   padding: 0.9rem;
@@ -152,7 +152,7 @@
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-/* 🔽 Status Message */
+
 .status-msg {
   margin-top: 1.5rem;
   font-size: 0.95rem;
@@ -161,7 +161,7 @@
   text-align: left;
 }
 
-/* 🔽 Buttons */
+
 .user-actions {
   display: flex;
   flex-wrap: wrap;
@@ -209,7 +209,7 @@
   filter: brightness(1.2);
 }
 
-/* 🔽 Avatar Edit */
+
 .avatar-edit-container {
   position: relative;
   display: inline-block;
@@ -240,7 +240,7 @@
   transform: scale(1.2);
 }
 
-/* 🔽 Profile Overview */
+
 .profile-card {
   display: flex;
   flex-wrap: wrap;
@@ -286,7 +286,7 @@
   color: #bbb;
 }
 
-/* 🔽 Stats */
+
 .stats-row {
   display: flex;
   gap: 2rem;
@@ -315,7 +315,7 @@
   color: #ccc;
 }
 
-/* 🔽 Genre Pills */
+
 .genres-list {
   margin-top: 1.5rem;
 }
@@ -338,7 +338,7 @@
   margin-top: 0.4rem;
 }
 
-/* 🔽 Settings + Danger */
+
 .settings-section {
   margin-top: 2rem;
   padding-top: 1.4rem;
@@ -357,7 +357,7 @@
   margin-top: 2.5rem;
 }
 
-/* 🔽 Mobile Responsive */
+
 @media (max-width: 768px) {
   .user-header,
   .profile-card {

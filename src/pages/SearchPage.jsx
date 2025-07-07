@@ -1,4 +1,4 @@
-// src/pages/SearchPage.jsx
+
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../css/SearchPage.css";
@@ -75,14 +75,14 @@ function SearchPage() {
         Search Results for: <span className="highlight">"{query}"</span>
       </h2>
 
-      {/* Tabs */}
+      
       <div className="tab-selector">
         <button onClick={() => setSelectedTab("movie")} className={selectedTab === "movie" ? "active" : ""}>🎬 Movies</button>
         <button onClick={() => setSelectedTab("tv")} className={selectedTab === "tv" ? "active" : ""}>📺 TV Shows</button>
         <button onClick={() => setSelectedTab("actor")} className={selectedTab === "actor" ? "active" : ""}>🧑 Actors</button>
       </div>
 
-      {/* Movies Tab */}
+     
       {selectedTab === "movie" && (
         <div className="search-section">
           <div className="movies-grid">
@@ -99,7 +99,7 @@ function SearchPage() {
         </div>
       )}
 
-      {/* TV Shows Tab */}
+      
       {selectedTab === "tv" && (
         <div className="search-section">
           <div className="movies-grid">
@@ -116,7 +116,7 @@ function SearchPage() {
         </div>
       )}
 
-      {/* Actor Tab */}
+      
       {selectedTab === "actor" && (
         <div className="search-section">
           {actors.length > 0 ? (

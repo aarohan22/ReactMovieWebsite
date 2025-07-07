@@ -115,7 +115,7 @@
   box-shadow: 0 0 10px rgba(244, 6, 18, 0.6);
 }
 
-/* ===== ✅ Responsive Enhancements ===== */
+
 @media (max-width: 768px) {
   .hero-banner {
     height: auto;

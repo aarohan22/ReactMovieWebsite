@@ -5,7 +5,7 @@ import {
   saveFavoritesToFirestore,
 } from "../firebase/firestoreHelpers";
 
-// ✅ Define context and hook outside the component
+
 const TvContext = createContext();
 const useTvContext = () => useContext(TvContext);
 
@@ -54,5 +54,5 @@ const TvProvider = ({ children }) => {
   );
 };
 
-// ✅ Export hook and provider in stable form
+
 export { TvProvider, useTvContext };

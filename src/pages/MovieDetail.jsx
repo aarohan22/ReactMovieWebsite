@@ -53,7 +53,7 @@ function MovieDetail() {
 
   return (
     <>
-      {/* 🔥 BACKDROP BANNER WITH BLUR */}
+     
       <div
         className={`movie-detail-container ${showModal ? "blur-background" : ""}`}
         style={{

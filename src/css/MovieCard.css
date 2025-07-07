@@ -38,7 +38,6 @@
   opacity: 1;
 }
 
-/* Poster */
 .movie-poster {
   width: 100%;
   aspect-ratio: 2 / 3;
@@ -60,7 +59,7 @@
   transform: scale(1.05);
 }
 
-/* Info Panel */
+
 .movie-info {
   position: absolute;
   bottom: 0;
@@ -107,7 +106,7 @@
   gap: 0.4rem;
 }
 
-/* Favorite & Watchlist Button */
+
 .favorite-btn,
 .watchlist-btn {
   background-color: rgba(0, 0, 0, 0.5);
@@ -146,7 +145,7 @@
   color: #00e0ff;
 }
 
-/* === Responsive Adjustments === */
+
 @media (max-width: 768px) {
   .movie-card {
     transform: none !important;

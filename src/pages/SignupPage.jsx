@@ -15,7 +15,7 @@ const SignupPage = () => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      // Set displayName
+      
       await updateProfile(userCredential.user, {
         displayName: username,
       });

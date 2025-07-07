@@ -10,7 +10,7 @@ function HeroBanner({ type = "movie", featuredItems = null }) {
   const intervalRef = useRef(null);
   const navigate = useNavigate();
 
-  // Fetch movies or TV shows or use passed featuredItems
+  
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
@@ -22,7 +22,7 @@ function HeroBanner({ type = "movie", featuredItems = null }) {
           const data = await res.json();
           const results = (data.results || []).map(item => ({
             ...item,
-            media_type: type, // inject type
+            media_type: type, 
           }));
           setFeatured(results.slice(0, 5));
         }
@@ -33,7 +33,7 @@ function HeroBanner({ type = "movie", featuredItems = null }) {
     fetchFeatured();
   }, [type, featuredItems]);
 
-  // Start auto slide
+
   useEffect(() => {
     if (featured.length === 0) return;
     startAutoPlay();

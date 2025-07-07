@@ -1,4 +1,4 @@
-// src/pages/Favorites.jsx
+
 import "../css/Favorites.css";
 import { useMovieContext } from "../contexts/MovieContext";
 import { useTvContext } from "../contexts/TvContext";
@@ -11,10 +11,10 @@ import { auth } from "../firebase";
 function Favorites() {
   const [user] = useAuthState(auth);
 
-  // ✅ Corrected: use 'favoriteMovies' from context
+ 
   const { favoriteMovies } = useMovieContext();
 
-  // ✅ Defensive fallback in case context fails
+  // fallback for case fails
   const { favoriteTvShows = [] } = useTvContext();
 
   const [activeTab, setActiveTab] = useState("movies");

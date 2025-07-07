@@ -35,7 +35,7 @@ const UserPage = () => {
   const [tvWatchlist, setTvWatchlist] = useState([]);
   const [loadingWatchlist, setLoadingWatchlist] = useState(false);
 
-  // 🔁 Detect tab from URL query parameter
+  
   useEffect(() => {
     const queryTab = new URLSearchParams(location.search).get("tab");
     if (queryTab === "watchlist" || queryTab === "settings" || queryTab === "overview") {

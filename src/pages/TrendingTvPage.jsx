@@ -1,7 +1,7 @@
-// src/pages/TrendingTvPage.jsx
+
 import { useEffect, useState } from "react";
 import TvCard from "../components/TvCard";
-import HeroBanner from "../components/HeroBanner"; // Import HeroBanner
+import HeroBanner from "../components/HeroBanner";
 import "../css/Home.css"; 
 
 const API_KEY = "55d4f543b9f3aa97797dda4acce64f2b";
@@ -18,7 +18,7 @@ function TrendingTvPage() {
 
   return (
     <div className="search-page">
-      {/* HeroBanner added */}
+      
       <HeroBanner type="tv" />
       
       <h2>📺 Trending TV Shows</h2>

@@ -8,7 +8,7 @@ import { auth } from "../firebase";
 
 const db = getFirestore();
 
-/** ✅ Wait until user is authenticated */
+
 export const getUserDocRef = async () => {
   const user = auth.currentUser;
   if (user) return doc(db, "users", user.uid);
@@ -22,7 +22,7 @@ export const getUserDocRef = async () => {
   });
 };
 
-/** ✅ Check if displayName is unique */
+
 export const isDisplayNameTaken = async (displayName) => {
   const nameDocRef = doc(db, "displayNames", displayName.toLowerCase());
   const snap = await getDoc(nameDocRef);
@@ -35,7 +35,7 @@ export const isDisplayNameTaken = async (displayName) => {
   return false;
 };
 
-/** ✅ Save user profile + name registry */
+
 export const saveUserProfileToFirestore = async (displayName, avatarURL) => {
   const user = auth.currentUser;
   if (!user) throw new Error("User not authenticated");
@@ -50,7 +50,7 @@ export const saveUserProfileToFirestore = async (displayName, avatarURL) => {
   await setDoc(nameDocRef, { uid: user.uid }, { merge: true });
 };
 
-/** ✅ Favorites */
+
 export const saveFavoritesToFirestore = async (favorites, type = "movies") => {
   try {
     const docRef = await getUserDocRef();
@@ -71,7 +71,7 @@ export const loadFavoritesFromFirestore = async (type = "movies") => {
   }
 };
 
-/** ✅ Genres */
+
 export const loadFavoriteGenres = async () => {
   try {
     const docRef = await getUserDocRef();
@@ -92,14 +92,14 @@ export const saveFavoriteGenres = async (genres) => {
   }
 };
 
-/** ✅ User Profile Data */
+
 export const loadUserData = async () => {
   const docRef = await getUserDocRef();
   const snap = await getDoc(docRef);
   return snap.exists() ? snap.data() : {};
 };
 
-/** ✅ Watchlist */
+
 export const saveWatchlist = async (ids, type = "movies") => {
   try {
     const docRef = await getUserDocRef();

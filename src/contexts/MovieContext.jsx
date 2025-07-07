@@ -11,7 +11,7 @@ export const useMovieContext = () => useContext(MovieContext);
 export const MovieProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 
-  // 🔹 Load from Firestore when user logs in
+ 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
@@ -22,7 +22,7 @@ export const MovieProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
-  // 🔹 Save to Firestore whenever favorites change
+  
   useEffect(() => {
     if (auth.currentUser) {
       saveFavoritesToFirestore(favorites, "movies");

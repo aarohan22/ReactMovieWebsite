@@ -30,7 +30,7 @@
   }
 }
 
-/* Brand */
+
 .navbar-left {
   flex: 1;
 }
@@ -61,7 +61,7 @@
   }
 }
 
-/* Nav Links */
+
 .navbar-center {
   flex: 2;
   display: flex;
@@ -102,7 +102,7 @@
   width: 100%;
 }
 
-/* Right Section */
+
 .navbar-right {
   flex: 1;
   display: flex;
@@ -114,7 +114,7 @@
   padding-right: 0;
 }
 
-/* Search Icon Button */
+
 .search-icon-btn {
   background: none;
   border: none;
@@ -133,7 +133,7 @@
   color: #f40612;
 }
 
-/* Close Icon Button */
+
 .search-close {
   background: none;
   border: none;
@@ -152,7 +152,7 @@
   color: white;
 }
 
-/* Expanded Search Form with buttery smooth animation */
+
 .search-container-overlay {
   position: relative;
   display: flex;
@@ -167,7 +167,7 @@
   overflow: hidden;
   padding: 0 0.4rem;
   
-  /* Animate transform scaleX from 0 to 1 for smooth width scaling */
+ 
   transform-origin: right center;
   transform: scaleX(0);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -181,7 +181,7 @@
   flex-grow: 1;
 }
 
-/* Search Input with fade & slide in */
+
 .search-input-expanded {
   width: 100%;
   border: none;
@@ -207,7 +207,7 @@
   padding: 0.45rem 1rem;
 }
 
-/* Dropdown Search Result List */
+
 .search-dropdown {
   position: absolute;
   top: 110%;
@@ -222,7 +222,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Dropdown Item */
+
 .search-item {
   display: flex;
   align-items: center;
@@ -263,7 +263,7 @@
   font-size: 0.8rem;
 }
 
-/* Profile */
+
 .profile-icon {
   width: 36px;
   height: 36px;
@@ -341,7 +341,7 @@
   color: #ff4d4d;
 }
 
-/* Login */
+
 .login-button {
   background: rgba(244, 6, 18, 0.08);
   border: 1px solid #f40612;
@@ -358,7 +358,7 @@
   transform: translateY(-1px);
 }
 
-/* Fade In Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;

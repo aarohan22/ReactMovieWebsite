@@ -18,7 +18,7 @@ function NavBar() {
   const profileDropdownRef = useRef();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Set profile image from user context
+ 
   useEffect(() => {
     if (user?.photoURL) {
       setProfileImage(user.photoURL);
@@ -29,7 +29,7 @@ function NavBar() {
     }
   }, [user]);
 
-  // Debounced search API
+  
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
       if (query.trim()) {
@@ -60,7 +60,7 @@ function NavBar() {
     return () => clearTimeout(delayDebounce);
   }, [query]);
 
-  // Close search & profile dropdown when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
