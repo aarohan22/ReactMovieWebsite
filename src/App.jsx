@@ -17,7 +17,7 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import UserPage from './pages/UserPage';
 import TvShowEpisodes from "./pages/TvShowEpisodes";
-// 🆕 TV and Trending Pages
+
 import TrendingMoviesPage from './pages/TrendingMoviesPage.jsx';
 import TrendingTvPage from './pages/TrendingTvPage.jsx';
 import TvShowDetail from './pages/TvShowDetail.jsx';
@@ -25,7 +25,7 @@ import TvShowDetail from './pages/TvShowDetail.jsx';
 function App() {
   return (
     <MovieProvider>
-      <TvProvider> {/* ✅ Wrap entire app with TvProvider */}
+      <TvProvider> 
         <NavBar />
         <main className="main-content">
           <Routes>
@@ -35,7 +35,7 @@ function App() {
             <Route path="/movie/:id" element={<MovieDetail />} />
             <Route path="/actor/:id" element={<ActorDetail />} />
 
-            {/* 🆕 TV + Trending */}
+           
             <Route path="/tv/:id" element={<TvShowDetail />} />
             <Route path="/movies/trending" element={<TrendingMoviesPage />} />
             <Route path="/tv/trending" element={<TrendingTvPage />} />
